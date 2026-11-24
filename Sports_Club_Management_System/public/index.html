@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sports Club Management</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand">🏆 <span>SPORTSYNC</span></div>
+    <p class="nav-label">MENU</p>
+    <a class="nav active" href="#dashboard">▦ &nbsp; Dashboard</a>
+    <a class="nav" href="#members">♙ &nbsp; Members</a>
+    <a class="nav" href="#activities">◷ &nbsp; Training schedule</a>
+    <div class="side-note">SPORTS CLUB<br><small>Management portal</small></div>
+  </aside>
+  <main>
+    <header><div><p class="eyebrow">CLUB ADMINISTRATION</p><h1>Sports Club Dashboard</h1></div><span class="admin">● &nbsp; Club Manager</span></header>
+    <section id="dashboard">
+      <div class="welcome"><div><p>WELCOME BACK</p><h2>Manage your club. Build your team.</h2><span>Keep track of members and upcoming training activities.</span></div><div class="welcome-icon">🏅</div></div>
+      <div class="stats">
+        <article class="stat"><span>Total Members</span><strong id="memberCount">0</strong><small>Registered members</small></article>
+        <article class="stat"><span>Training Activities</span><strong id="activityCount">0</strong><small>Scheduled activities</small></article>
+        <article class="stat"><span>Sports Offered</span><strong>5</strong><small>Available categories</small></article>
+      </div>
+    </section>
+    <section id="members" class="panel">
+      <div class="section-head"><div><p class="eyebrow">CLUB DIRECTORY</p><h2>Member Management</h2></div></div>
+      <form id="memberForm" class="form-grid">
+        <label>Full name<input name="name" placeholder="Enter member name" required></label>
+        <label>Email address<input name="email" type="email" placeholder="name@example.com" required></label>
+        <label>Phone number<input name="phone" placeholder="Phone number"></label>
+        <label>Choose sport<select name="sport" required><option value="">Select sport</option><option>Cricket</option><option>Football</option><option>Basketball</option><option>Badminton</option><option>Volleyball</option></select></label>
+        <button type="submit">+ Add Member</button>
+      </form>
+      <p id="memberMessage" class="message" aria-live="polite"></p>
+      <div class="table-wrap"><table><thead><tr><th>MEMBER</th><th>EMAIL</th><th>PHONE</th><th>SPORT</th><th>ACTION</th></tr></thead><tbody id="membersTable"><tr><td colspan="5">Loading members...</td></tr></tbody></table></div>
+    </section>
+    <section id="activities" class="panel">
+      <div class="section-head"><div><p class="eyebrow">ON THE CALENDAR</p><h2>Training Schedule</h2></div></div>
+      <form id="activityForm" class="form-grid">
+        <label>Activity title<input name="title" placeholder="e.g. Morning practice" required></label>
+        <label>Sport<select name="sport" required><option value="">Select sport</option><option>Cricket</option><option>Football</option><option>Basketball</option><option>Badminton</option><option>Volleyball</option></select></label>
+        <label>Date<input name="date" type="date" required></label>
+        <label>Time<input name="time" type="time" required></label>
+        <label>Coach<input name="coach" placeholder="Coach name"></label>
+        <button type="submit">+ Add Activity</button>
+      </form>
+      <p id="activityMessage" class="message" aria-live="polite"></p>
+      <div id="activityList" class="activity-list">Loading activities...</div>
+    </section>
+    <footer>SportSync · Sports Club Management System</footer>
+  </main>
+  <script src="app.js"></script>
+</body></html>
